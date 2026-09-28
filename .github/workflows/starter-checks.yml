@@ -1,0 +1,22 @@
+name: Starter environment checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  starter:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.3'
+          cache: npm
+      - run: npm ci
+      - run: npm run setup
+      - run: npm run build
+      - run: npm test
+      - run: npm run verify:starter
+# Assessment checks intentionally start red and are not claimed by this workflow.
