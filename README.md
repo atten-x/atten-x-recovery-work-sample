@@ -2,6 +2,14 @@
 
 A paid engineering work sample. The normal import works; recovery behavior needs repair. This is a local laboratory with synthetic data, not a live client system.
 
+## Shared instructions
+
+[The unified brief](overview.html) covers both projects, common terms and one private handoff. Download/open the HTML in a browser, or use the copy supplied with your invitation. This README covers this project’s setup.
+
+## Required for every candidate
+
+Complete this assignment and [the Cursor assignment](https://github.com/atten-x/atten-x-cursor-work-sample). The cap is **6 hours per assignment, 12 hours total per candidate**, at your **Hirexe hourly rate**. Each cap includes setup, learning, implementation, notes and its **45-minute live follow-up**. Stop at the cap and submit your verified progress and remaining work.
+
 ## Start here on Windows
 
 1. Install **Node.js 22.22.3** using the matching Windows installer from https://nodejs.org/dist/v22.22.3/. No separate SQLite, Python, Docker or database server is required. Reopen PowerShell after installation.

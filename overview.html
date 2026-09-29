@@ -3,87 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paid Technical Work Sample | Atten-X</title>
+  <meta name="description" content="One paid Atten-X work sample covering data-import recovery and a phased Cursor build. Both projects, one private submission, 12 hours maximum.">
+  <title>Technical Work Sample | Atten-X</title>
   <style>
-    :root { --ink:#111827; --muted:#5b6575; --line:#e6e8ef; --paper:#fff; --soft:#f7f8fb; --navy:#2f2f8c; --pink:#ed4b97; --blue:#149ed8; }
+    :root { --ink:#182033; --muted:#536075; --line:#e3e7ef; --soft:#f6f7fb; --navy:#2f2f8c; --cyan:#149ed8; --pink:#ed4b97; }
     * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top left,rgba(237,75,151,.12),transparent 34rem),radial-gradient(circle at top right,rgba(20,158,216,.12),transparent 34rem),var(--soft); }
-    .page { max-width:1080px; margin:auto; padding:36px 24px; }
-    .sheet { background:var(--paper); border:1px solid var(--line); border-radius:28px; overflow:hidden; box-shadow:0 24px 80px rgba(17,24,39,.1); }
-    header { padding:36px 42px 30px; border-bottom:1px solid var(--line); }
-    .eyebrow { margin:0 0 10px; color:var(--navy); font-size:.76rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
-    h1 { margin:0; font-size:clamp(2.3rem,5vw,3.7rem); line-height:1.02; letter-spacing:-.055em; }
-    .lede { max-width:790px; margin:14px 0 0; color:var(--muted); font-size:1.06rem; }
-    .facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:22px; }
-    .fact { padding:12px 14px; background:var(--soft); border:1px solid var(--line); border-radius:15px; }
-    .fact strong { display:block; margin-bottom:2px; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; }
-    .fact span { color:var(--muted); font-size:.88rem; }
-    main { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(260px,.9fr); gap:25px; padding:28px 42px 22px; }
-    section { margin:0 0 20px; }
-    h2 { margin:0 0 9px; font-size:.83rem; letter-spacing:.09em; text-transform:uppercase; }
-    p { margin:0 0 10px; }
+    body { margin:0; color:var(--ink); background:radial-gradient(ellipse at top left,rgba(237,75,151,.08),transparent 38rem),#f2f4f8; font:16px/1.55 "Segoe UI",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,sans-serif; }
+    .page { max-width:1120px; margin:32px auto; padding:0 24px; }
+    .sheet { background:white; border:1px solid var(--line); border-radius:24px; box-shadow:0 18px 64px rgba(24,32,51,.07); }
+    header { padding:36px 40px 28px; border-bottom:1px solid var(--line); }
+    .eyebrow { margin:0 0 12px; color:var(--navy); font-size:.76rem; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(2.2rem,5vw,3.5rem); line-height:1.08; letter-spacing:-.045em; }
+    .lede { max-width:780px; margin:14px 0 24px; color:var(--muted); font-size:1.08rem; }
+    .terms { display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:12px; }
+    .term { min-width:0; padding:15px 17px; background:var(--soft); border:1px solid var(--line); border-radius:12px; }
+    .term.primary { background:var(--navy); border-color:var(--navy); color:white; }
+    .term dt { margin-bottom:5px; font-size:.7rem; font-weight:750; text-transform:uppercase; letter-spacing:.1em; }
+    .term dd { margin:0; line-height:1.4; }
+    .term strong { display:block; font-size:1.12rem; }
+    .term small { display:block; margin-top:3px; font-size:.86rem; }
+    .terms-note { margin:14px 0 0; color:var(--muted); font-size:.9rem; }
+    main { padding:28px 40px 32px; }
+    main > section + section { margin-top:28px; }
+    h2 { margin:0 0 12px; font-size:1.15rem; letter-spacing:-.015em; }
+    h3 { margin:9px 0 12px; font-size:1.5rem; line-height:1.2; letter-spacing:-.025em; }
+    p { margin:0 0 12px; }
+    p:last-child { margin-bottom:0; }
     ol,ul { margin:0; padding-left:1.25rem; }
-    li { margin:0 0 8px; } li::marker { color:var(--pink); }
-    .card { padding:17px 19px; background:var(--soft); border:1px solid var(--line); border-radius:18px; }
-    .side { padding:18px 19px; background:linear-gradient(145deg,rgba(47,47,140,.06),rgba(20,158,216,.08)); border:1px solid var(--line); border-radius:18px; }
-    .side + .side { margin-top:13px; }
-    .note { color:var(--muted); font-size:.9rem; }
-    .callout { padding:13px 16px; border:1px solid rgba(237,75,151,.23); border-radius:14px; background:rgba(237,75,151,.07); }
-    footer { padding:14px 42px 22px; border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; }
-    footer p { margin:0; }
-    @media (max-width:760px) { .page { padding:12px; } header,main,footer { padding-left:22px; padding-right:22px; } .facts { grid-template-columns:repeat(2,minmax(0,1fr)); } main { grid-template-columns:1fr; } }
-    @media print { @page { size:letter; margin:.38in; } body { background:#fff; font-size:9.8pt; line-height:1.32; -webkit-print-color-adjust:exact; print-color-adjust:exact; } .page { max-width:none; padding:0; } .sheet { border:0; border-radius:0; box-shadow:none; } header { padding:10px 12px 15px; } h1 { font-size:27pt; } .lede { font-size:10.3pt; margin-top:8px; } .facts { margin-top:13px; gap:8px; } .fact { padding:9px 10px; } .fact span { font-size:8.9pt; } main { grid-template-columns:minmax(0,1.55fr) minmax(0,.9fr); gap:16px; padding:17px 12px 5px; } section { margin-bottom:15px; } h2 { margin-bottom:6px; } li { margin-bottom:5px; } .card,.side { padding:12px 13px; } .side + .side { margin-top:10px; } .callout { padding:10px 12px; } footer { padding:11px 12px; font-size:8.7pt; } section,.card,.side,.callout { break-inside:avoid; } }
+    li { padding-left:3px; margin:0 0 12px; }
+    li:last-child { margin-bottom:0; }
+    li::marker { color:var(--navy); font-weight:700; }
+    a { color:var(--navy); text-underline-offset:3px; overflow-wrap:anywhere; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; border-radius:2px; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .project { min-width:0; padding:23px; border:1px solid var(--line); border-top:3px solid var(--navy); border-radius:14px; }
+    .project-label { margin:0; color:var(--navy); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; font-weight:750; }
+    .project-intro { color:var(--muted); }
+    .repo { margin:18px 0; padding:12px 14px; background:var(--soft); border-radius:9px; font-size:.88rem; }
+    .repo a { display:block; font-weight:650; }
+    .repo small { display:block; margin-top:5px; color:var(--muted); font-size:.84rem; }
+    .project ol { font-size:.95rem; }
+    .shared { padding:20px 23px; background:var(--soft); border:1px solid var(--line); border-radius:14px; }
+    .wrap-up { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:28px; }
+    .wrap-up > * { min-width:0; }
+    .live { border-left:3px solid var(--cyan); padding-left:20px; }
+    .small { color:var(--muted); font-size:.91rem; }
+    footer { border-top:1px solid var(--line); padding:16px 40px; color:var(--muted); font-size:.85rem; }
+    @media(max-width:800px) {
+      .page { padding:0 12px; margin:14px auto; }
+      header,main { padding:24px; }
+      .terms { grid-template-columns:1fr; }
+      .projects,.wrap-up { grid-template-columns:minmax(0,1fr); }
+      .project { padding:20px; }
+      footer { padding:16px 24px; }
+    }
+    @media print {
+      @page { size:letter; margin:.5in; }
+      body { background:white; font-size:10pt; line-height:1.4; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .page { max-width:none; margin:0; padding:0; }
+      .sheet { border:0; border-radius:0; box-shadow:none; }
+      header { padding:0 0 16px; }
+      h1 { font-size:28pt; }
+      .lede { font-size:11pt; margin:10px 0 16px; }
+      .terms { grid-template-columns:1.25fr 1fr 1fr; }
+      .term { padding:11px 12px; }
+      .term strong { font-size:11pt; }
+      .term small,.terms-note { font-size:9pt; }
+      main { padding:18px 0 0; }
+      main > section + section { margin-top:20px; }
+      .projects { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+      .project { padding:15px; }
+      h2 { font-size:12pt; }
+      h3 { font-size:17pt; }
+      .project ol,.repo,.small { font-size:9.5pt; }
+      .repo { margin:12px 0; padding:10px; }
+      .shared { padding:15px; }
+      .wrap-up { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:20px; }
+      section,.project,.term,.wrap-up { break-inside:avoid; }
+      h2,h3 { break-after:avoid; }
+      footer { padding:12px 0; margin-top:18px; font-size:9pt; }
+    }
   </style>
 </head>
 <body>
   <div class="page"><article class="sheet">
     <header>
-      <p class="eyebrow">Atten-X · Paid work sample</p>
-      <h1>Recover a failing data import</h1>
-      <p class="lede">an inherited importer works in a simple demo but loses or duplicates records when a run is interrupted. Work through the failures, test your explanations, and leave a repair someone else can verify.</p>
-      <div class="facts" aria-label="Assignment at a glance">
-        <div class="fact"><strong>Time</strong><span>10-hour cap, including notes and a 45-minute live session.</span></div>
-        <div class="fact"><strong>Payment</strong><span>Paid for time spent at your Hirexe hourly rate.</span></div>
-        <div class="fact"><strong>Window</strong><span>About one week from receiving the materials.</span></div>
-        <div class="fact"><strong>Submit</strong><span>Private ZIP/link with code and notes; no public solution PR.</span></div>
-      </div>
+      <p class="eyebrow">Atten-X · Paid technical work sample</p>
+      <h1>Two projects. One handoff.</h1>
+      <p class="lede">Repair an unreliable data import and direct an AI-assisted feature build. Complete both projects to show how you investigate, make decisions and verify your work.</p>
+      <dl class="terms" aria-label="Time, payment and timing">
+        <div class="term primary"><dt>Total time</dt><dd><strong>12 hours maximum</strong><small>Up to 6 hours per project. Less is fine.</small></dd></div>
+        <div class="term"><dt>Payment</dt><dd><strong>Hirexe hourly rate</strong><small>Paid for time actually spent.</small></dd></div>
+        <div class="term"><dt>Submission window</dt><dd><strong>About one week</strong><small>Confirm dates when materials and access are ready.</small></dd></div>
+      </dl>
+      <p class="terms-note">All setup, learning, implementation, testing, notes and live reviews count within the time limits. Stop at the cap and submit your progress; do not add unapproved hours.</p>
     </header>
     <main>
-      <div>
-        <section>
-          <h2>The challenge</h2>
-          <p>A local service imports pages of synthetic records. Repair it so temporary failures, repeated pages, and a stopped-and-restarted run do not silently lose or duplicate records. Failed runs must report their state rather than claim success or retry forever.</p>
-          <div class="callout"><strong>A quick fix is not the finish line.</strong> Verify it against every supplied failure scenario. Preserve the data rules and test expectations; do not disable the difficult cases to get a passing result.</div>
-        </section>
-        <section>
-          <h2>What to do</h2>
+      <section aria-labelledby="start">
+        <h2 id="start">Before you begin</h2>
+        <ol>
+          <li><strong>Open both starters.</strong> Download or clone the linked repos into separate folders. Each README covers Windows setup, synthetic data, the exact contract and test commands. Keep the two codebases separate.</li>
+          <li><strong>Prepare your tools.</strong> Use the specified Node.js version. For Cursor installation and the unassessed practice, follow the <a href="https://github.com/atten-x/atten-x-cursor-work-sample/blob/main/docs/windows-cursor-start.md">beginner setup guide</a>. Arrange account/model access privately with the coordinator; do not assume you need to buy a subscription.</li>
+          <li><strong>Check the starting point.</strong> Run each repo’s starter checks before changing code. They should pass; assessment checks intentionally start with failures. If access or setup blocks you, report it promptly rather than spending the time budget on avoidable troubleshooting.</li>
+        </ol>
+      </section>
+      <section class="projects" aria-label="The two required projects">
+        <article class="project" aria-labelledby="recovery">
+          <p class="project-label">Project 01 · Diagnose and repair</p>
+          <h3 id="recovery">Recover a failing data import</h3>
+          <p class="project-intro">Repair an inherited importer so retries, repeated records and interrupted runs do not lose or duplicate data. Failed runs must report failure, not false success or endless retries.</p>
+          <div class="repo"><a href="https://github.com/atten-x/atten-x-recovery-work-sample">github.com/atten-x/atten-x-recovery-work-sample</a><small>Any editor. AI assistance is welcome.</small></div>
           <ol>
-            <li><strong>Diagnose.</strong> Reproduce a failure and test an explanation. After about two working hours, send a short checkpoint: run command, observed result, current hypothesis, and next experiment.</li>
-            <li><strong>Repair and challenge.</strong> Make a focused change, then run the remaining scenarios. At about five hours, send the current commit, evidence of progress, and what changed in your understanding. Submit early if finished.</li>
-            <li><strong>Close the loop.</strong> Add regression tests and prove the final records match the supplied expected results. Explain unresolved failures and your best next step. Reserve 45 minutes of the cap for the live session.</li>
+            <li><strong>Diagnose with evidence.</strong> Reproduce a failure, test an explanation and record what changes your understanding. Send brief checkpoints around two and four working hours: actual result, current hypothesis, next step and any blocker. Submit early if finished.</li>
+            <li><strong>Repair, then challenge it.</strong> Make a focused change and run every supplied scenario. Add regression tests; check exact stored records, restart behavior and truthful failure states.</li>
+            <li><strong>Leave a reproducible result.</strong> Keep a short trail of hypothesis → experiment → result → next decision. Identify any remaining failures and the next useful test.</li>
           </ol>
-        </section>
-        <section class="card">
-          <h2>Hand back</h2>
-          <p>Code, tests, and brief notes kept as you work: hypothesis → experiment → result → next decision. Include reproducible commands, actual results, time spent, and AI use. We value verified progress and a candid partial result over an unsupported claim of completion.</p>
-        </section>
-      </div>
-      <aside>
-        <section class="side">
-          <h2>When a fix does not hold</h2>
-          <p>Use the new evidence to choose your next test. Ask for clarification or a hint if needed; useful help-seeking is part of the work. AI is welcome, but verify its suggestions. There is no required number of failed attempts or reward for exceeding the cap.</p>
-        </section>
-        <section class="side">
-          <h2>Materials &amp; boundaries</h2>
-          <p>We will supply a runnable repo, local API simulator, failure scenarios, exact data/recovery rules, and a short reference guide. No live integrations or client data. Environment problems should be reported, not endured.</p>
-        </section>
-        <section class="side">
-          <h2>Live: investigate together</h2>
-          <p>We will run one new combination of the documented failure conditions. Take time to inspect it, explain the evidence, and choose a next step. If your repair already handles it, show why. This adds no new business rule.</p>
-        </section>
-      </aside>
+        </article>
+        <article class="project" aria-labelledby="cursor">
+          <p class="project-label">Project 02 · Direct and verify</p>
+          <h3 id="cursor">Lead a phased build in Cursor</h3>
+          <p class="project-intro">Add lead-status editing and filtering to the starter app. Changes must survive reload and restart; invalid updates and failed saves must not appear successful.</p>
+          <div class="repo"><a href="https://github.com/atten-x/atten-x-cursor-work-sample">github.com/atten-x/atten-x-cursor-work-sample</a><small>Cursor required. Prior Cursor experience is not assumed.</small></div>
+          <ol>
+            <li><strong>Plan and configure.</strong> Before implementation, submit a Cursor-assisted phase plan with scope, dependencies and QA criteria. Configure coordinator, builder and fresh-context reviewer roles using the supplied references. You choose the phases and supported models; sequential agents are fine.</li>
+            <li><strong>Run the phase loop.</strong> Direct AI through build → independent QA → repair/retest → validation. Save commands, results and approval decisions. Do not advance with unresolved failures. Inspect the changes yourself and explain direct edits or interventions.</li>
+            <li><strong>Prove the checks work.</strong> Test the actual user flow. Define one additional case and expected result before asking AI to write its test. Deliberately break a behavior, demonstrate the test fails for that defect, then restore and rerun.</li>
+          </ol>
+        </article>
+      </section>
+      <section class="shared" aria-labelledby="rules">
+        <h2 id="rules">Working rules for both projects</h2>
+        <ul>
+          <li><strong>Verify, don’t just accept.</strong> An agent’s success message is not evidence. Preserve the supplied data rules, protected fixtures and acceptance checks; report a genuine harness defect instead of weakening the test.</li>
+          <li><strong>Ask useful questions.</strong> Clarification and focused hints are welcome. No forced disagreement with AI, invented setbacks or minimum number of failed attempts is required. Sound partial progress is better than an unsupported completion claim.</li>
+          <li><strong>Keep the work local and safe.</strong> Use only the supplied synthetic data. No production access, client data, live integrations or deployment. Never include credentials or private account details in code or AI excerpts.</li>
+        </ul>
+      </section>
+      <section class="wrap-up" aria-label="Submission and live review">
+        <div>
+          <h2>One private handoff</h2>
+          <p>Send one ZIP file via email with both assignment project folders within. The ZIP should include:</p>
+          <ul>
+            <li><strong>Both projects’ source and tests</strong> in clearly named folders, with reproducible run instructions. Exclude dependencies, local databases and build output.</li>
+            <li><strong>One concise work log</strong> with a section per project: time spent, key decisions, AI/help used, actual check results and remaining gaps. Existing note templates are optional formatting aids; do not duplicate the same notes.</li>
+            <li><strong>The Cursor workflow evidence:</strong> active configuration and invocation instructions, phase plans, QA/fix decisions, the break/restore test result and representative sanitized agent handoffs. No full chat dumps.</li>
+          </ul>
+          <p class="small" style="margin-top:14px">The starter repos are public. Do not submit solutions or personal notes through public issues, branches or pull requests.</p>
+        </div>
+        <aside class="live" aria-labelledby="live">
+          <h2 id="live">Live follow-up</h2>
+          <p>Reserve <strong>45 minutes within each project’s budget</strong> for review with us.</p>
+          <p>For recovery, investigate a new combination of the documented failure conditions. If your repair already handles it, demonstrate why.</p>
+          <p>For Cursor, scope a small extension, direct the agents, inspect the result and run a meaningful check.</p>
+          <p class="small">We are looking for evidence-led decisions and verified progress, not speaking speed or completion at any cost.</p>
+        </aside>
+      </section>
     </main>
-    <footer><p>We are interested in how you investigate, adapt, communicate, and follow through, not just the final demo. Dates, tools, and access will be agreed before you begin.</p></footer>
+    <footer>This is the shared brief for both projects. Use each repository’s contract for its technical requirements.</footer>
   </article></div>
 </body>
 </html>

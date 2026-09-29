@@ -7,7 +7,7 @@ Command/input and actual versus expected result:
 Current explanation and supporting evidence:
 Next experiment / help needed:
 
-## Around five active hours (or final submission if earlier)
+## Around four active hours (or final submission if earlier)
 Current revision/snapshot:
 What is now verified:
 What changed in your understanding:

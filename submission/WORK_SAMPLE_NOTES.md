@@ -1,7 +1,8 @@
 # Work-sample handoff
 
 ## Time and setup
-Working time (include setup/learning/notes):
+Working time for this assignment (6-hour cap; include setup/learning/notes/live follow-up):
+Combined working time across both assignments (12-hour cap):
 Runtime and OS:
 Setup commands and actual outcome:
 
